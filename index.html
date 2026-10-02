@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tinto — Styled QR Codes</title>
+  <meta name="description" content="Turn any link into a beautiful QR code. Pick a style, download, done. Free, no signup." />
+  <meta property="og:title" content="Tinto — Styled QR Codes" />
+  <meta property="og:description" content="Turn any link into a beautiful QR code. Free, no signup." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍷</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/styles/main.css" />
+</head>
+<body>
+  <div id="app">
+
+    <header class="header">
+      <a class="logo" href="/">tinto</a>
+    </header>
+
+    <section class="hero">
+      <h1>Your link,<br/>but <em>beautiful</em></h1>
+      <p class="hero-sub">Paste a URL. Pick a style. Download your QR code.</p>
+    </section>
+
+    <main class="workspace">
+
+      <div class="preview-area">
+        <div class="preview-card" id="preview-card">
+          <div id="qr-canvas" class="qr-canvas"></div>
+        </div>
+        <div class="download-row">
+          <button class="btn btn-primary" id="download-png">↓ PNG</button>
+          <button class="btn btn-primary" id="download-svg">↓ SVG</button>
+          <button class="btn btn-secondary" id="copy-btn">Copy</button>
+        </div>
+      </div>
+
+      <div class="controls">
+
+        <div class="control-section">
+          <label for="qr-url">Link or text</label>
+          <input
+            type="text"
+            id="qr-url"
+            placeholder="https://your-site.com"
+            value="https://github.com"
+            autocomplete="off"
+            spellcheck="false"
+          />
+        </div>
+
+        <div class="control-section">
+          <label>Style</label>
+          <div class="preset-row" id="preset-grid"></div>
+        </div>
+
+        <div class="control-section">
+          <label>Shape</label>
+          <div class="shape-row">
+            <div class="shape-group">
+              <span class="shape-label">Dots</span>
+              <div class="option-row" id="dot-type-row">
+                <button class="opt active" data-value="rounded">Rounded</button>
+                <button class="opt" data-value="dots">Circle</button>
+                <button class="opt" data-value="classy-rounded">Classy</button>
+                <button class="opt" data-value="square">Square</button>
+              </div>
+            </div>
+            <div class="shape-group">
+              <span class="shape-label">Corners</span>
+              <div class="option-row" id="corner-type-row">
+                <button class="opt active" data-value="extra-rounded">Rounded</button>
+                <button class="opt" data-value="dot">Circle</button>
+                <button class="opt" data-value="square">Square</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="control-section">
+          <label>Colors</label>
+          <div class="color-row">
+            <label class="color-swatch">
+              <input type="color" id="color-fg" value="#1a1a2e" />
+              <span>Foreground</span>
+            </label>
+            <label class="color-swatch">
+              <input type="color" id="color-bg" value="#ffffff" />
+              <span>Background</span>
+            </label>
+            <label class="color-swatch">
+              <input type="color" id="color-accent" value="#e94560" />
+              <span>Accent</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="control-section">
+          <label>Logo <span class="hint">optional</span></label>
+          <div class="logo-row">
+            <button class="btn btn-secondary btn-sm" id="logo-upload-btn">Upload image</button>
+            <button class="btn btn-ghost btn-sm" id="logo-remove-btn" hidden>Remove</button>
+            <input type="file" id="logo-input" accept="image/*" hidden />
+          </div>
+        </div>
+
+        <details class="advanced">
+          <summary>Advanced</summary>
+          <div class="advanced-inner">
+            <div class="adv-row">
+              <label>Size: <span id="size-label">400</span>px</label>
+              <input type="range" id="qr-size" min="200" max="1200" value="400" step="50" />
+            </div>
+            <div class="adv-row">
+              <label>Error correction</label>
+              <div class="option-row" id="ec-row">
+                <button class="opt" data-value="L">L</button>
+                <button class="opt" data-value="M">M</button>
+                <button class="opt active" data-value="Q">Q</button>
+                <button class="opt" data-value="H">H</button>
+              </div>
+            </div>
+            <div class="adv-row">
+              <label class="toggle-label">
+                <input type="checkbox" id="use-gradient" />
+                Gradient
+              </label>
+              <label class="color-swatch" id="gradient-end-wrap" style="opacity:0.4">
+                <input type="color" id="color-gradient-end" value="#e94560" disabled />
+                <span>End color</span>
+              </label>
+            </div>
+          </div>
+        </details>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>tinto.codes</p>
+    </footer>
+
+  </div>
+
+  <script type="module" src="/src/scripts/main.js"></script>
+</body>
+</html>

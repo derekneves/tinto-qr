@@ -1,0 +1,58 @@
+export const PRESETS = [
+  {
+    name: 'Tinto',
+    fg: '#2c2420', bg: '#faf8f5', accent: '#8b2252',
+    dotType: 'rounded', cornerType: 'extra-rounded',
+    gradient: null,
+    swatch: 'linear-gradient(135deg, #2c2420 40%, #8b2252 60%)',
+  },
+  {
+    name: 'Midnight',
+    fg: '#1a1a2e', bg: '#ffffff', accent: '#e94560',
+    dotType: 'rounded', cornerType: 'extra-rounded',
+    gradient: null,
+    swatch: 'linear-gradient(135deg, #1a1a2e 40%, #e94560 60%)',
+  },
+  {
+    name: 'Ocean',
+    fg: '#0077b6', bg: '#f0f8ff', accent: '#023e8a',
+    dotType: 'classy-rounded', cornerType: 'extra-rounded',
+    gradient: { type: 'linear', rotation: 135, colorStops: [{ offset: 0, color: '#0077b6' }, { offset: 1, color: '#00b4d8' }] },
+    swatch: 'linear-gradient(135deg, #0077b6, #00b4d8)',
+  },
+  {
+    name: 'Sunset',
+    fg: '#ff6b35', bg: '#fffef0', accent: '#d62828',
+    dotType: 'dots', cornerType: 'dot',
+    gradient: { type: 'linear', rotation: 45, colorStops: [{ offset: 0, color: '#ff6b35' }, { offset: 1, color: '#d62828' }] },
+    swatch: 'linear-gradient(135deg, #ff6b35, #d62828)',
+  },
+  {
+    name: 'Neon',
+    fg: '#00ff87', bg: '#0a0a0f', accent: '#ff00ff',
+    dotType: 'dots', cornerType: 'dot',
+    gradient: null,
+    swatch: 'linear-gradient(135deg, #00ff87, #ff00ff)',
+  },
+  {
+    name: 'Mono',
+    fg: '#111111', bg: '#ffffff', accent: '#111111',
+    dotType: 'square', cornerType: 'square',
+    gradient: null,
+    swatch: 'linear-gradient(135deg, #111 50%, #eee 50%)',
+  },
+  {
+    name: 'Lavender',
+    fg: '#7c3aed', bg: '#faf5ff', accent: '#6d28d9',
+    dotType: 'extra-rounded', cornerType: 'extra-rounded',
+    gradient: { type: 'linear', rotation: 90, colorStops: [{ offset: 0, color: '#7c3aed' }, { offset: 1, color: '#a855f7' }] },
+    swatch: 'linear-gradient(135deg, #7c3aed, #a855f7)',
+  },
+  {
+    name: 'Ember',
+    fg: '#dc2626', bg: '#1c1917', accent: '#f59e0b',
+    dotType: 'rounded', cornerType: 'dot',
+    gradient: { type: 'radial', colorStops: [{ offset: 0, color: '#f59e0b' }, { offset: 1, color: '#dc2626' }] },
+    swatch: 'linear-gradient(135deg, #f59e0b, #dc2626)',
+  },
+];
