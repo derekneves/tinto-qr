@@ -10,7 +10,9 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "vite": "^6.0.0"
+    "@cloudflare/vite-plugin": "^1.62.5",
+    "vite": "^6.0.0",
+    "wrangler": "^4.147.0"
   },
   "dependencies": {
     "qr-code-styling": "^1.9.2"
